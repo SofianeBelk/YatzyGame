@@ -1,23 +1,22 @@
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public class Yatzy {
 
     public static int chance(int d1, int d2, int d3, int d4, int d5) {
-        int total = 0;
-        total += d1;
-        total += d2;
-        total += d3;
-        total += d4;
-        total += d5;
-        return total;
+        return d1 + d2 + d3 + d4 + d5;
     }
 
-    public static int yatzy(int... dice) {
-        int[] counts = new int[6];
-        for (int die : dice)
-            counts[die - 1]++;
-        for (int i = 0; i != 6; i++)
-            if (counts[i] == 5)
-                return 50;
-        return 0;
+    public static int yatzy(int d1, int d2, int d3, int d4, int d5) {
+        Map<Integer, Long> counts = Stream.of(d1, d2, d3, d4, d5)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        return counts.values().stream()
+                .filter(x -> x == 5)
+                .findFirst()
+                .map(elm -> 50)
+                .orElse(0);
     }
 
     public static int ones(int d1, int d2, int d3, int d4, int d5) {
@@ -133,6 +132,20 @@ public class Yatzy {
             return 0;
     }
 
+    public static int threeOfAKind(int d1, int d2, int d3, int d4, int d5) {
+        int[] t;
+        t = new int[6];
+        t[d1 - 1]++;
+        t[d2 - 1]++;
+        t[d3 - 1]++;
+        t[d4 - 1]++;
+        t[d5 - 1]++;
+        for (int i = 0; i < 6; i++)
+            if (t[i] >= 3)
+                return (i + 1) * 3;
+        return 0;
+    }
+
     public static int fourOfAKind(int d1, int d2, int d3, int d4, int d5) {
         int[] tallies;
         tallies = new int[6];
@@ -147,19 +160,6 @@ public class Yatzy {
         return 0;
     }
 
-    public static int threeOfAKind(int d1, int d2, int d3, int d4, int d5) {
-        int[] t;
-        t = new int[6];
-        t[d1 - 1]++;
-        t[d2 - 1]++;
-        t[d3 - 1]++;
-        t[d4 - 1]++;
-        t[d5 - 1]++;
-        for (int i = 0; i < 6; i++)
-            if (t[i] >= 3)
-                return (i + 1) * 3;
-        return 0;
-    }
 
     public static int smallStraight(int d1, int d2, int d3, int d4, int d5) {
         int[] tallies;
