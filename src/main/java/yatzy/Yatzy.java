@@ -1,5 +1,7 @@
 package yatzy;
 
+import yatzy.implementations.Dice;
+
 import java.util.List;
 
 public class Yatzy {
