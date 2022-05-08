@@ -3,6 +3,7 @@ package yatzy.interfaces;
 import java.util.List;
 
 public interface IDice {
+
     int sum();
 
     boolean hasElementWithNumberFive();

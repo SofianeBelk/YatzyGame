@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Yatzy {
 
-    private Yatzy(){
+    private Yatzy() {
         throw new UnsupportedOperationException("this constructor is not available");
     }
 

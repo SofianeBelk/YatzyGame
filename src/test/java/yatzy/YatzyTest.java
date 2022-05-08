@@ -2,7 +2,6 @@ package yatzy;
 
 import org.junit.Test;
 import yatzy.implementations.Dice;
-import yatzy.Yatzy;
 
 import static org.junit.Assert.assertEquals;
 
