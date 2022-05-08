@@ -1,10 +1,9 @@
 package yatzy;
 
 import org.junit.Test;
-import yatzy.classes.Dice;
 
 import static org.junit.Assert.assertEquals;
-import static yatzy.interfaces.Category.*;
+import static yatzy.Category.*;
 
 public class YatzyPartitionTest {
 

@@ -1,4 +1,4 @@
-package yatzy.classes;
+package yatzy;
 
 import yatzy.interfaces.IDice;
 

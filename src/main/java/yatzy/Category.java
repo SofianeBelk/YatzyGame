@@ -1,7 +1,4 @@
-package yatzy.interfaces;
-
-import yatzy.YatzyPartition;
-import yatzy.classes.Dice;
+package yatzy;
 
 import java.util.function.Function;
 
