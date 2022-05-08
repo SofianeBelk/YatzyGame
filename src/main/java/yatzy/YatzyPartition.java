@@ -1,12 +1,12 @@
 package yatzy;
 
-import yatzy.implementations.Dice;
+import yatzy.classes.Dice;
 
 import java.util.List;
 
-public class Yatzy {
+public class YatzyPartition {
 
-    private Yatzy() {
+    private YatzyPartition() {
         throw new UnsupportedOperationException("this constructor is not available");
     }
 
