@@ -39,7 +39,7 @@ public class Dice implements IDice {
     @Override
     public List<Integer> findPairs() {
         return counts().entrySet().stream()
-                .filter(e -> e.getValue() >= 2)
+                .filter(x -> x.getValue() >= 2)
                 .map(Map.Entry::getKey)
                 .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList());
@@ -48,7 +48,7 @@ public class Dice implements IDice {
     @Override
     public int getDiceWithNumberOfAKind(int n) {
         return counts().entrySet().stream()
-                .filter(e -> e.getValue() >= n)
+                .filter(x -> x.getValue() >= n)
                 .map(Map.Entry::getKey)
                 .findFirst()
                 .orElse(0);
