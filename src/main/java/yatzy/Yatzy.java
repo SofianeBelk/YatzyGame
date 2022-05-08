@@ -4,6 +4,10 @@ import java.util.List;
 
 public class Yatzy {
 
+    private Yatzy(){
+        throw new UnsupportedOperationException("this constructor is not available");
+    }
+
     public static int chance(Dice dice) {
         return dice.sum();
     }
@@ -81,7 +85,6 @@ public class Yatzy {
         if (!dice.hasElementWithNumberFive() && !dice.findPairs().isEmpty() && dice.getDiceWithNumberOfAKind(3) != 0)
             return dice.sum();
         return 0;
-
     }
 }
 
