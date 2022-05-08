@@ -1,4 +1,4 @@
-##Rapport YatzyGame
+## Rapport YatzyGame
 
 Dans ce rapport, je vais présenter les modifications apportées au code original développer par Émily Bache.
 
